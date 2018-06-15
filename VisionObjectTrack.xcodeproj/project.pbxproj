@@ -24,8 +24,8 @@
 		28EF296F20AF903C0048E408 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5FE4D15F20A222630058A8E9 /* AssetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
 		5FE4D16020A222630058A8E9 /* TrackingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
-		674C8A20674C8D5000000001 /* SampleCode.xcconfig */ = {isa = PBXFileReference; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
-		674F12F0674E9B0000000001 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
+		784BAE40784BADD000000001 /* SampleCode.xcconfig */ = {isa = PBXFileReference; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+		7875366078753D6000000001 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
 		C353A2A61F7C885600CBA369 /* VideoReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoReader.swift; sourceTree = "<group>"; };
 		C353A2A81F7D887A00CBA369 /* VisionTrackerProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionTrackerProcessor.swift; sourceTree = "<group>"; };
 		C353A2AA1F7DC06800CBA369 /* CommonTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTypes.swift; sourceTree = "<group>"; };
@@ -49,18 +49,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		674C8C80674C8DB000000001 /* Configuration */ = {
+		784AE090784BB38000000001 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				674C8A20674C8D5000000001 /* SampleCode.xcconfig */,
+				784BAE40784BADD000000001 /* SampleCode.xcconfig */,
 			);
 			name = Configuration;
 			sourceTree = "<group>";
 		};
-		674E7280674E725000000001 /* LICENSE */ = {
+		7873E4B07875B7A000000001 /* LICENSE */ = {
 			isa = PBXGroup;
 			children = (
-				674F12F0674E9B0000000001 /* LICENSE.txt */,
+				7875366078753D6000000001 /* LICENSE.txt */,
 			);
 			name = LICENSE;
 			path = LICENSE;
@@ -72,8 +72,8 @@
 				28EF296F20AF903C0048E408 /* README.md */,
 				C3D9A6EA1F79D071000BD448 /* VisionObjectTrack */,
 				C3D9A6E91F79D071000BD448 /* Products */,
-				674C8C80674C8DB000000001 /* Configuration */,
-				674E7280674E725000000001 /* LICENSE */,
+				784AE090784BB38000000001 /* Configuration */,
+				7873E4B07875B7A000000001 /* LICENSE */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,7 +212,7 @@
 /* Begin XCBuildConfiguration section */
 		C3D9A70E1F79D071000BD448 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 674C8A20674C8D5000000001 /* SampleCode.xcconfig */;
+			baseConfigurationReference = 784BAE40784BADD000000001 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -261,7 +261,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -272,7 +272,7 @@
 		};
 		C3D9A70F1F79D071000BD448 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 674C8A20674C8D5000000001 /* SampleCode.xcconfig */;
+			baseConfigurationReference = 784BAE40784BADD000000001 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -315,7 +315,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -325,14 +325,14 @@
 		};
 		C3D9A7111F79D071000BD448 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 674C8A20674C8D5000000001 /* SampleCode.xcconfig */;
+			baseConfigurationReference = 784BAE40784BADD000000001 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = VisionObjectTrack/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.VisionObjectTrack${SAMPLE_CODE_DISAMBIGUATOR}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -345,14 +345,14 @@
 		};
 		C3D9A7121F79D071000BD448 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 674C8A20674C8D5000000001 /* SampleCode.xcconfig */;
+			baseConfigurationReference = 784BAE40784BADD000000001 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = VisionObjectTrack/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.VisionObjectTrack${SAMPLE_CODE_DISAMBIGUATOR}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

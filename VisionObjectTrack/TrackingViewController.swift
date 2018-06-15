@@ -48,6 +48,7 @@ class TrackingViewController: UIViewController {
         backplateLayer.cornerRadius = backplateLayer.bounds.height / 2
         frameCounterLabelBackplate.isHidden = true
         frameCounterLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 16, weight: .light)
+        self.handleModeSelection(modeSelector)
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -90,6 +90,6 @@ internal class VideoReader {
             return nil
         }
         
-        return sampleBuffer.imageBuffer
+        return CMSampleBufferGetImageBuffer(sampleBuffer)
     }
 }

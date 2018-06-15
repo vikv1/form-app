@@ -1,12 +1,12 @@
 # Tracking Multiple Objects or Rectangles in Video
 
-Apply Vision algorithms to track rectangles and objects throughout a video.
+Apply Vision algorithms to track objects or rectangles throughout a video.
 
 ## Overview
 
-With the [Vision](https://developer.apple.com/documentation/vision) framework, you can detect and track objects and rectangles through a sequence of frames coming from video, live capture, or other sources.
+With the [Vision](https://developer.apple.com/documentation/vision) framework, you can detect and track objects or rectangles through a sequence of frames coming from video, live capture, or other sources.
 
-This sample app supports rectangle tracking as well as object tracking.  It shows you how to pick an initial object to track, how to create Vision tracking requests to follow that object, and how to parse results from the object tracker.
+This sample app shows you how to pick an initial object to track, how to create Vision tracking requests to follow that object, and how to parse results from the object or rectangle tracker.
 
 ## Preview the Sample App
 
@@ -14,11 +14,11 @@ To see this sample app in action, build and run the project in Xcode, then choos
 
 ## Nominate Objects or Rectangles to Track
 
-To track rectangles, select Rectangles.  The app will run the rectangle detector and show rectangles it found on the screen.
+To track rectangles, select Rectangles.  The app runs the rectangle detector and shows rectangles it finds in a preview of the scene.
 
-To track objects, select Objects and nominate objects to track by touching and dragging boxes around them in the preview.  You can select multiple objects; the app will identify them by their [`UUID`](https://developer.apple.com/documentation/foundation/uuid) with differently colored rectangles.
+Otherwise, to track objects, select Objects.  Then nominate objects to track by touching them in the preview and dragging boxes around them.  You can select multiple objects; the app identifies them by their [`UUID`](https://developer.apple.com/documentation/foundation/uuid), using differently colored rectangles.
 
-The [`VNTrackObjectRequest`](https://developer.apple.com/documentation/vision/vntrackobjectrequest) class requires a detected object observation to initialize.  The sample provides this observation by running [`VNDetectRectanglesRequest`](https://developer.apple.com/documentation/vision/vndetectrectanglesrequest), or by creating one from the bounding box you drew on the preview frame.  It tracks multiple objects by iterating through each observation and creating a [`VNDetectedObjectObservation`](https://developer.apple.com/documentation/vision/vndetectedobjectobservation) from its bounding box.
+The [`VNTrackObjectRequest`](https://developer.apple.com/documentation/vision/vntrackobjectrequest) class requires a detected object observation to initialize.  The sample provides this observation by running [`VNDetectRectanglesRequest`](https://developer.apple.com/documentation/vision/vndetectrectanglesrequest), or by creating one from the bounding box you drew in the preview.  It tracks multiple objects by iterating through each observation and creating a [`VNDetectedObjectObservation`](https://developer.apple.com/documentation/vision/vndetectedobjectobservation) from its bounding box.
 
 ``` swift
 var inputObservations = [UUID: VNDetectedObjectObservation]()
@@ -73,12 +73,12 @@ try requestHandler.perform(trackingRequests, on: frame, orientation: videoReader
 ```
 [View in Source](x-source-tag://PerformRequests)
 
-By iterating through each selected object or rectangle, creating a tracking request from it, and calling perform on the request handler, Vision follows the object or rectangle over the image sequence and return results through its `results` property.
+By iterating through each selected object or rectangle, creating a tracking request from it, and calling `perform` on the request handler, Vision follows the object or rectangle over the image sequence and returns results through its `results` property.
 
 
 ## Interpret Tracking Results
 
-Access tracking results through the request's `results` property, or its completion handler.  A single tracking request represents a single tracked object in a one-to-one relationship.  If a tracking request succeeds, its [`results`](https://developer.apple.com/documentation/vision/vnrequest/2867238-results) property contains [`VNDetectedObjectObservation`](https://developer.apple.com/documentation/vision/vndetectedobjectobservation) objects describing the tracked object's new location in the frame.
+Access tracking results through the request's `results` property or its completion handler.  A single tracking request represents a single tracked object in a one-to-one relationship.  If a tracking request succeeds, its [`results`](https://developer.apple.com/documentation/vision/vnrequest/2867238-results) property contains [`VNDetectedObjectObservation`](https://developer.apple.com/documentation/vision/vndetectedobjectobservation) objects describing the tracked object's new location in the frame.
 
 ``` swift
 guard let results = processedRequest.results as? [VNObservation] else {
@@ -107,4 +107,4 @@ Use the observation’s [`boundingBox`](https://developer.apple.com/documentatio
 inputObservations[observation.uuid] = observation
 ```
 
-In practice, you should run a new tracking request with an updated set of input observations periodically to capture objects that were not present in your initial nomination frame. For instance, you could create a new [`VNTrackObjectRequest`](https://developer.apple.com/documentation/vision/vntrackobjectrequest) every ten frames.
+In practice, you should periodically run a new tracking request with an updated set of input observations  to capture objects that weren't present in your initial nomination frame. For instance, you could create a new [`VNTrackObjectRequest`](https://developer.apple.com/documentation/vision/vntrackobjectrequest) every ten frames.
