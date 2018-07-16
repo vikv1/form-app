@@ -24,7 +24,7 @@ class TrackingImageView: UIView {
     var rubberbandingRect: CGRect {
         let pt1 = self.rubberbandingStart
         let pt2 = CGPoint(x: self.rubberbandingStart.x + self.rubberbandingVector.x, y: self.rubberbandingStart.y + self.rubberbandingVector.y)
-        let rect = CGRect(x: min(pt1.x, pt2.x), y: min(pt1.y, pt2.y), width: fabs(pt1.x - pt2.x), height: fabs(pt1.y - pt2.y))
+        let rect = CGRect(x: min(pt1.x, pt2.x), y: min(pt1.y, pt2.y), width: abs(pt1.x - pt2.x), height: abs(pt1.y - pt2.y))
         
         return rect
     }
