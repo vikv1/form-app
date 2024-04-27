@@ -14,6 +14,8 @@ class TrackingImageView: UIView {
     var polyRects = [TrackedPolyRect]()
 
     var imageAreaRect = CGRect.zero
+    var aPath = UIBezierPath()
+
 
     let dashedPhase = CGFloat(0.0)
     let dashedLinesLengths: [CGFloat] = [4.0, 2.0]
@@ -55,11 +57,12 @@ class TrackingImageView: UIView {
         self.setNeedsDisplay()
     }
     
+
     override func draw(_ rect: CGRect) {
         let ctx = UIGraphicsGetCurrentContext()!
 
         ctx.saveGState()
-        
+
         ctx.clear(rect)
         ctx.setFillColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
         ctx.setLineWidth(2.0)
@@ -68,19 +71,17 @@ class TrackingImageView: UIView {
         guard let newImage = scaleImage(to: rect.size) else {
             return
         }
-        
         newImage.draw(at: self.imageAreaRect.origin)
 
         // Draw rubberbanding rectangle, if available
         if self.rubberbandingRect != CGRect.zero {
             ctx.setStrokeColor(UIColor.blue.cgColor)
-
-            // Switch to dashed lines for rubberbanding selection
             ctx.setLineDash(phase: dashedPhase, lengths: dashedLinesLengths)
             ctx.stroke(self.rubberbandingRect)
         }
 
-        // Draw rects
+        var lastCenter: CGPoint? = nil
+        // Draw rects and calculate centers
         for polyRect in self.polyRects {
             ctx.setStrokeColor(polyRect.color.cgColor)
             switch polyRect.style {
@@ -90,18 +91,36 @@ class TrackingImageView: UIView {
                 ctx.setLineDash(phase: dashedPhase, lengths: dashedLinesLengths)
             }
             let cornerPoints = polyRect.cornerPoints
-            var previous = scale(cornerPoint: cornerPoints[cornerPoints.count - 1], toImageViewPointInViewRect: rect)
+            var totalX: CGFloat = 0
+            var totalY: CGFloat = 0
+            var count: CGFloat = CGFloat(cornerPoints.count)
+
+            var previous = scale(cornerPoint: cornerPoints.last!, toImageViewPointInViewRect: rect)
             for cornerPoint in cornerPoints {
-                ctx.move(to: previous)
                 let current = scale(cornerPoint: cornerPoint, toImageViewPointInViewRect: rect)
+                ctx.move(to: previous)
                 ctx.addLine(to: current)
                 previous = current
+                totalX += current.x
+                totalY += current.y
             }
             ctx.strokePath()
+
+            let center = CGPoint(x: totalX / count, y: totalY / count)
+            if let last = lastCenter {
+                // Draw line from the last center to the current center
+                ctx.setStrokeColor(UIColor.red.cgColor) // Set the color for the center line
+                ctx.move(to: last)
+                ctx.addLine(to: center)
+                ctx.strokePath()
+            }
+            lastCenter = center
         }
-        
+
         ctx.restoreGState()
     }
+
+
 
     private func scaleImage(to viewSize: CGSize) -> UIImage? {
         guard self.image != nil && self.image.size != CGSize.zero else {

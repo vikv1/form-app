@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WMe-U7-uB9">
-    <device id="retina5_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WMe-U7-uB9">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -96,10 +94,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uCl-Er-taF" userLabel="Settings View">
-                                <rect key="frame" x="56" y="98" width="302" height="56"/>
+                                <rect key="frame" x="51" y="104" width="312" height="59"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wjM-03-9tM">
-                                        <rect key="frame" x="67" y="20" width="139" height="29"/>
+                                        <rect key="frame" x="67" y="20" width="149" height="32"/>
                                         <segments>
                                             <segment title="Fast"/>
                                             <segment title="Accurate"/>
@@ -109,13 +107,13 @@
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41l-ca-tSz">
-                                        <rect key="frame" x="20" y="25" width="39" height="18"/>
+                                        <rect key="frame" x="20" y="26.666666666666657" width="39" height="18"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKn-qo-j36">
-                                        <rect key="frame" x="246" y="18.333333333333329" width="36" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKn-qo-j36">
+                                        <rect key="frame" x="256" y="20.666666666666671" width="36" height="30"/>
                                         <state key="normal" title="Clear"/>
                                         <connections>
                                             <action selector="handleClearRectsButton:" destination="0gZ-i3-le5" eventType="touchUpInside" id="6Km-4Q-EEo"/>
@@ -135,10 +133,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mob-UU-TmQ" customClass="TrackingImageView" customModule="VisionObjectTrack" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="154" width="414" height="582"/>
+                                <rect key="frame" x="0.0" y="163" width="414" height="573"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gev-9l-Cwk">
-                                        <rect key="frame" x="8" y="538.66666666666663" width="85.333333333333329" height="35.333333333333371"/>
+                                        <rect key="frame" x="8" y="529.66666666666663" width="85.333333333333329" height="35.333333333333371"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frame" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tvi-1H-SV1">
                                                 <rect key="frame" x="20.000000000000004" y="7.9999999999999982" width="45.333333333333343" height="19.333333333333329"/>
@@ -184,8 +182,8 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" prompt="Drag to select objects" id="dH9-mV-MA1">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="9zs-Eh-wMm">
-                            <rect key="frame" x="124.66666666666669" y="41.666666666666671" width="165" height="29"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="9zs-Eh-wMm">
+                            <rect key="frame" x="118.66666666666669" y="40" width="177" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Objects"/>

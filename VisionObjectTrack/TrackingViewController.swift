@@ -24,7 +24,7 @@ class TrackingViewController: UIViewController {
     @IBOutlet weak var trackingViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var frameCounterLabel: UILabel!
     @IBOutlet weak var frameCounterLabelBackplate: UIView!
-    
+
     var videoAsset: AVAsset! {
         didSet {
             visionProcessor = VisionTrackerProcessor(videoAsset: videoAsset)
