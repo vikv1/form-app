@@ -1,10 +1,3 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Implements the main tracking image view.
-*/
-
 import Foundation
 import UIKit
 

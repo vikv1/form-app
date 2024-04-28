@@ -1,10 +1,3 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Contains the tracker processing logic using Vision.
-*/
-
 import AVFoundation
 import UIKit
 import Vision

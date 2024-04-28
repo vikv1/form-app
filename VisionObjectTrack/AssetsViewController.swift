@@ -1,10 +1,3 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Implements the view controller showing available video assets.
-*/
-
 import UIKit
 import Photos
 

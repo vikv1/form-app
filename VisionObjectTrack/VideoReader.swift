@@ -1,10 +1,3 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Contains the video reader implementation using AVCapture.
-*/
-
 import Foundation
 import AVFoundation
 import Darwin

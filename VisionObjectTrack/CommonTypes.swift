@@ -1,10 +1,3 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Defines common types used throughout the sample.
-*/
-
 import Foundation
 import UIKit
 import Vision

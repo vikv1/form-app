@@ -1,10 +1,3 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Implements the view controller showing tracked content.
-*/
-
 import AVFoundation
 import UIKit
 
